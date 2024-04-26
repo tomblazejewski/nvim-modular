@@ -40,14 +40,11 @@ require('lazy').setup({
 
   require 'kickstart/plugins/cmp',
 
-  require 'kickstart/plugins/tokyonight',
-
   require 'kickstart/plugins/todo-comments',
 
   require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
-
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
@@ -61,7 +58,9 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.catppuccin',
+  require 'kickstart.plugins.bufferline',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -90,5 +89,6 @@ require('lazy').setup({
     },
   },
 })
-
+--activate bufferline
+require('bufferline').setup{}
 -- vim: ts=2 sts=2 sw=2 et

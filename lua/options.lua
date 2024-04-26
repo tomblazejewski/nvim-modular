@@ -61,4 +61,6 @@ vim.opt.scrolloff = 10
 
 -- Have nerd font
 vim.g.have_nerd_font = true
+-- Termguicolors needed for bufferline
+vim.opt.termguicolors = true
 -- vim: ts=2 sts=2 sw=2 et
