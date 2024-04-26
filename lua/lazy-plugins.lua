@@ -61,7 +61,7 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.catppuccin',
   require 'kickstart.plugins.bufferline',
-
+  require 'kickstart.plugins.nvim-comment',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -90,5 +90,5 @@ require('lazy').setup({
   },
 })
 --activate bufferline
-require('bufferline').setup{}
+require('bufferline').setup {}
 -- vim: ts=2 sts=2 sw=2 et
