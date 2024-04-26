@@ -51,9 +51,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Tab management
 vim.keymap.set('n', '<leader>n', ':bn<cr>', { desc = '[N]ext tab' })
 vim.keymap.set('n', '<leader>p', ':bp<cr>', { desc = '[P]revious tab' })
-vim.keymap.set('n', '<leader>x', ':bd<cr>', { desc = 'Close the tab' })
+vim.keymap.set('n', '<leader>x', ':bp<cr>:db #<cr>', { desc = 'Close the tab' })
 vim.keymap.set('n', '<leader>cs', ':wq<cr>', { desc = '[C]lose [S]ave file' })
 vim.keymap.set('n', '<leader>cf', ':q!<cr>', { desc = '[C]lose no-save [F]ile' })
 -- comment
 vim.keymap.set('n', '<C-_>', ':CommentToggle<cr>', { desc = 'Comment toggle' })
+-- yank to clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 -- vim: ts=2 sts=2 sw=2 et
