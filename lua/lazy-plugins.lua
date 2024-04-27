@@ -63,6 +63,8 @@ require('lazy').setup({
   require 'kickstart.plugins.bufferline',
   require 'kickstart.plugins.nvim-comment',
   require 'kickstart.plugins.autosession',
+  require 'kickstart.plugins.lsp-lens',
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -94,6 +96,8 @@ require('lazy').setup({
 require('bufferline').setup {}
 --configure the right venv for pyright
 require 'kickstart.plugins.pyright'
+--activate lsp lens
+require('lsp-lens').setup {}
 --workaround from https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes to try to fix auto sessions with neo-tree
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
   pattern = 'NvimTree*',
