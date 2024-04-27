@@ -14,6 +14,7 @@ return {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    auto_clean_after_session_restore = false, --try to fix autosession with this
     filesystem = {
       use_libuv_file_watcher = true,
       window = {
