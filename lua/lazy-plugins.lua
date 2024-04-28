@@ -64,7 +64,7 @@ require('lazy').setup({
   require 'kickstart.plugins.nvim-comment',
   require 'kickstart.plugins.autosession',
   require 'kickstart.plugins.lsp-lens',
-
+  require 'kickstart.plugins.none-ls',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
