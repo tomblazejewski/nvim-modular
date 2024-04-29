@@ -3,9 +3,10 @@ local null_ls = require 'null-ls'
 
 local opts = {
   sources = {
-    null_ls.builtins.formatting.isort,
-    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.isort.with { timeout = -1 },
+    null_ls.builtins.formatting.black.with { timeout = -1 },
   },
+  default_timeout = -1,
   on_attach = function(client, bufnr)
     if client.supports_method 'textDocument/formatting' then
       vim.api.nvim_clear_autocmds {
@@ -17,11 +18,8 @@ local opts = {
         buffer = bufnr,
         callback = function()
           vim.lsp.buf.format {
+            timeout_ms = 10000,
             bufnr = bufnr,
-            async = false,
-            filter = function(client_)
-              return client_.name == 'none-ls'
-            end,
           }
         end,
       })
