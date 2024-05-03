@@ -5,6 +5,7 @@ local opts = {
   sources = {
     null_ls.builtins.formatting.isort.with { timeout = -1 },
     null_ls.builtins.formatting.black.with { timeout = -1 },
+    null_ls.builtins.formatting.prettier.with { timeout = -1 },
   },
   default_timeout = -1,
   on_attach = function(client, bufnr)
