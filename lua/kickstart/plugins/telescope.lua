@@ -58,7 +58,7 @@ return {
         --
         defaults = {
           path_display = { 'tail' },
-          preview = { timeout = false },
+          preview = { timeout = false, treesitter = false },
         },
         -- pickers = {}
         extensions = {
