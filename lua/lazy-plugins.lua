@@ -65,7 +65,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autosession',
   require 'kickstart.plugins.lsp-lens',
   require 'kickstart.plugins.none-ls',
-  require 'kickstart.plugins.lsp-signature',
+  -- require 'kickstart.plugins.lsp-signature', this provides function argument hints and documentation but lsp docs + nvim lsp signature help in cmp give better positioning of things
   require 'kickstart.plugins.fugitive',
   require 'kickstart.plugins.precognition',
 
@@ -103,7 +103,8 @@ require 'kickstart.plugins.pyright'
 --activate lsp lens
 require('lsp-lens').setup {}
 --activate lsp-signature
-require('lsp_signature').setup {}
+-- require('lsp_signature').setup {}
+
 --workaround from https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes to try to fix auto sessions with neo-tree
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
   pattern = 'NvimTree*',
