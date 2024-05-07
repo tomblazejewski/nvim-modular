@@ -68,6 +68,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lsp-signature', this provides function argument hints and documentation but lsp docs + nvim lsp signature help in cmp give better positioning of things
   require 'kickstart.plugins.fugitive',
   require 'kickstart.plugins.precognition',
+  require 'kickstart.plugins.oil',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -104,7 +105,8 @@ require 'kickstart.plugins.pyright'
 require('lsp-lens').setup {}
 --activate lsp-signature
 -- require('lsp_signature').setup {}
-
+--activate oil
+require('oil').setup()
 --workaround from https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes to try to fix auto sessions with neo-tree
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
   pattern = 'NvimTree*',
