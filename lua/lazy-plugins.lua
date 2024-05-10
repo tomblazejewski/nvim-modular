@@ -106,6 +106,10 @@ require 'kickstart.plugins.pyright'
 require('lsp-lens').setup {}
 --activate lsp-signature
 -- require('lsp_signature').setup {}
+-- turn on debugging for none-ls
+require('null-ls').setup {
+  debug = true,
+}
 --activate oil
 require('oil').setup()
 --activate notify
@@ -125,6 +129,9 @@ require('noice').setup {
     long_message_to_split = true, -- long messages will be sent to a split
     inc_rename = false, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = false, -- add a border to hover docs and signature help
+  },
+  cmdline = {
+    view = 'cmdline',
   },
 }
 --workaround from https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes to try to fix auto sessions with neo-tree
