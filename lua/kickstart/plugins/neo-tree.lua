@@ -13,7 +13,13 @@ return {
   keys = {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
-  opts = {
+  opts = { --trying to have line numbers
+    event_handlers = {
+      event = 'neo_tree_buffer_enter',
+      handler = function()
+        vim.opt_local.relativenumber = true
+      end,
+    },
     auto_clean_after_session_restore = false, --try to fix autosession with this
     filesystem = {
       use_libuv_file_watcher = true,
