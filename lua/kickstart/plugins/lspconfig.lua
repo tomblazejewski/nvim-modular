@@ -205,6 +205,7 @@ return {
         'isort',
         'prettier',
         'fixjson',
+        'json-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
