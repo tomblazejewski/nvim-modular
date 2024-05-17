@@ -70,6 +70,7 @@ require('lazy').setup({
   require 'kickstart.plugins.precognition',
   require 'kickstart.plugins.oil',
   -- require 'kickstart.plugins.notify',
+  require 'kickstart.plugins.diffview',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
