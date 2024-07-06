@@ -56,6 +56,7 @@ vim.keymap.set('n', '<leader>cs', ':wq<cr>', { desc = '[C]lose [S]ave file' })
 vim.keymap.set('n', '<leader>cf', ':q!<cr>', { desc = '[C]lose no-save [F]ile' })
 -- comment
 vim.keymap.set({ 'n', 'v' }, '<C-_>', ':CommentToggle<cr>', { desc = 'Comment toggle' })
+vim.keymap.set({ 'n', 'v' }, '<C-/>', ':CommentToggle<cr>', { desc = 'Comment toggle' })
 -- yank to clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 -- vim: ts=2 sts=2 sw=2 et

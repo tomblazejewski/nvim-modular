@@ -4,9 +4,9 @@ local path = util.path
 local function get_python_path(workspace)
   -- Use activated virtualenv.
   if vim.env.VIRTUAL_ENV then
-    return path.join(vim.env.VIRTUAL_ENV, 'Scripts', 'python')
+    return path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
   end
-  return path.join(vim.env.HOME, 'venvs', 'venv', 'Scripts', 'python')
+  return path.join(vim.env.HOME, 'venvs', 'venv', 'bin', 'python')
 end
 
 lspconfig.pyright.setup {
