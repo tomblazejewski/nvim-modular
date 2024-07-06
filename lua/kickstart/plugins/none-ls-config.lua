@@ -6,6 +6,17 @@ local opts = {
     null_ls.builtins.formatting.isort,
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.prettier,
+    require('none-ls.diagnostics.flake8').with {
+      extra_args = {
+        '--max-line-length=120',
+        '--max-complexity=18',
+        '--select=D',
+        '--ignore=D400,D212,D205,D203,D210,D401',
+        '--exclude=.cache,tests/',
+        '--docstring-convention=all',
+        '--ignore-decorators=overrides',
+      },
+    },
   },
   default_timeout = 10000,
   --   on_attach = function(client, bufnr)

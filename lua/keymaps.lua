@@ -60,3 +60,4 @@ vim.keymap.set({ 'n', 'v' }, '<C-/>', ':CommentToggle<cr>', { desc = 'Comment to
 -- yank to clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 -- vim: ts=2 sts=2 sw=2 et
+vim.keymap.set({ 'n' }, 'cp', 'viwp')
