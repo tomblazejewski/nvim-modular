@@ -14,6 +14,11 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      numhl = true,
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 200,
+      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
@@ -57,6 +62,10 @@ return {
         map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
         map('n', '<leader>hb', gitsigns.blame_line, { desc = 'git [b]lame line' })
         map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
+        map('n', '<leader>ht', function()
+          gitsigns.toggle_word_diff()
+          gitsigns.toggle_linehl()
+        end, { desc = 'git [t]oggle change highlighting' })
         map('n', '<leader>hD', function()
           gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })
