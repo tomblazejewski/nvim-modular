@@ -14,6 +14,14 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      signs_staged = {
+        add = { text = '' },
+        change = { text = '󰾟' },
+        delete = { text = '' },
+        topdelete = { text = '' },
+        changedelete = { text = '󰾟' },
+      },
+      signs_staged_enable = true,
       numhl = true,
       current_line_blame = true,
       current_line_blame_opts = {
