@@ -201,6 +201,7 @@ return {
         'pyright',
         -- 'flake8',
         -- 'ruff',
+        'ruff-lsp',
         'mypy',
         'black',
         'isort',
