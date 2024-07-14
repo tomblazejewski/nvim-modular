@@ -1,7 +1,8 @@
 return {
   'danymat/neogen',
   config = function()
-    require('neogen').setup {
+    local neogen = require 'neogen'
+    neogen.setup {
       languages = {
         python = {
           template = {
@@ -10,8 +11,10 @@ return {
         },
       },
     }
-    vim.api.nvim_set_keymap('i', '<C-n>', ":lua require('neogen').jump_next<CR>", { desc = '[N]revious placeholder' })
-    vim.api.nvim_set_keymap('i', '<C-p>', ":lua require('neogen').jump_prev<CR>", { desc = '[P]revious placeholder' })
+
+    vim.keymap.set('n', '<leader>dd', neogen.generate, { desc = '[D]ocumentation [d]ocs' })
+    vim.keymap.set('i', '<C-n>', neogen.jump_next, { desc = '[N]ext placeholder' })
+    vim.keymap.set('i', '<C-p>', neogen.jump_prev, { desc = '[P]revious placeholder' })
   end,
   -- Uncomment next line if you want to follow only stable versions
   -- version = "*"
