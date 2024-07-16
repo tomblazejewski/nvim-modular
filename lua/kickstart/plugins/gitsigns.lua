@@ -80,6 +80,8 @@ return {
         -- Toggles
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
+        vim.keymap.set('n', '<leader>hc', ':Git commit -m ', { desc = 'git [c]ommit' })
+        vim.keymap.set('n', '<leader>hC', ':Git commit -am ', { desc = 'git Add [C]ommit' })
       end,
     },
   },
