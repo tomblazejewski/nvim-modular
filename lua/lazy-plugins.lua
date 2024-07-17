@@ -75,6 +75,7 @@ require('lazy').setup({
   require 'kickstart.plugins.hardtime',
   require 'kickstart.plugins.neogen',
   require 'kickstart.plugins.flash',
+  require 'kickstart.plugins.neotest',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -139,6 +140,7 @@ require('oil').setup()
 -- },
 -- }
 --workaround from https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes to try to fix auto sessions with neo-tree
+require 'kickstart.plugins.neotest-config'
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
   pattern = 'NvimTree*',
   callback = function()
