@@ -6,8 +6,9 @@ return {
       {
         '<leader>f',
         function()
-          vim.cmd 'LspLensOn'
+          vim.cmd 'LspLensOff'
           vim.cmd 'LspRestart'
+          vim.cmd 'LspLensOn'
           require('conform').format { async = true, lsp_fallback = true }
         end,
         mode = '',
