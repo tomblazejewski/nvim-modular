@@ -1,4 +1,4 @@
--- [[ Configure and install plugins ]]
+--[[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
 --    :Lazy
@@ -77,6 +77,7 @@ require('lazy').setup({
   require 'kickstart.plugins.flash',
   require 'kickstart.plugins.neotest',
   require 'kickstart.plugins.actions-preview',
+  require 'kickstart.plugins.profile',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
@@ -172,4 +173,29 @@ vim.api.nvim_create_autocmd('QuitPre', {
     end
   end,
 })
+local should_profile = os.getenv 'NVIM_PROFILE'
+if should_profile then
+  require('profile').instrument_autocmds()
+  if should_profile:lower():match '^start' then
+    require('profile').start '*'
+  else
+    require('profile').instrument '*'
+  end
+end
+
+local function toggle_profile()
+  local prof = require 'profile'
+  if prof.is_recording() then
+    prof.stop()
+    vim.ui.input({ prompt = 'Save profile to:', completion = 'file', default = 'profile.json' }, function(filename)
+      if filename then
+        prof.export(filename)
+        vim.notify(string.format('Wrote %s', filename))
+      end
+    end)
+  else
+    prof.start '*'
+  end
+end
+vim.keymap.set('', '<f1>', toggle_profile)
 -- vim: ts=2 sts=2 sw=2 et
