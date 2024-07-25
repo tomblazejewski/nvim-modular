@@ -201,6 +201,8 @@ return {
         'pyright',
         -- 'flake8',
         -- 'ruff',
+        -- 'rust-analyzer',
+        'codelldb',
         'ruff-lsp',
         'mypy',
         'black',

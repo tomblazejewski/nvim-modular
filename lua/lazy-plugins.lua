@@ -77,6 +77,7 @@ require('lazy').setup({
   require 'kickstart.plugins.flash',
   require 'kickstart.plugins.neotest',
   require 'kickstart.plugins.actions-preview',
+  require 'kickstart.plugins.rust',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
