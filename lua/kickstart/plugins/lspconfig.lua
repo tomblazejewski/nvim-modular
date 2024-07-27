@@ -203,7 +203,7 @@ return {
         -- 'ruff',
         -- 'rust-analyzer',
         'codelldb',
-        'ruff-lsp',
+        'ruff',
         'mypy',
         'black',
         'isort',
