@@ -173,4 +173,6 @@ vim.api.nvim_create_autocmd('QuitPre', {
     end
   end,
 })
+require 'kickstart.plugins.rust-setup'
+require 'kickstart.plugins.reload'
 -- vim: ts=2 sts=2 sw=2 et
