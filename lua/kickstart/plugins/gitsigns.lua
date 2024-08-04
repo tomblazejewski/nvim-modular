@@ -81,7 +81,7 @@ return {
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
         vim.keymap.set('n', '<leader>hc', ':Git commit -am ', { desc = 'git add [c]ommit' })
-        vim.keymap.set('n', '<leader>hC', ':Git add .<cr> :Git commit -am ', { desc = 'git Add all [C]ommit' })
+        vim.keymap.set('n', '<leader>hC', ':Git add . <bar> :Git commit -am ', { desc = 'git Add all [C]ommit' })
       end,
     },
   },
