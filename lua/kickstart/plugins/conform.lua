@@ -27,6 +27,11 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+      formatters = {
+        black = {
+          prepend_args = { '--fast' },
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
