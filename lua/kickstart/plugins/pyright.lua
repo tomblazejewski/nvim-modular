@@ -10,7 +10,13 @@ local function get_python_path(workspace)
 end
 
 lspconfig.pyright.setup {
-  -- ...
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = 'openFilesOnly',
+      },
+    },
+  },
   before_init = function(_, config)
     config.settings.python.pythonPath = get_python_path(config.root_dir)
   end,
