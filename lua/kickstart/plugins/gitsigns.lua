@@ -86,7 +86,12 @@ return {
           local branch_name = vim.api.nvim_exec('Git rev-parse --abbrev-ref HEAD', true)
           local command = 'Git push origin ' .. branch_name
           vim.api.nvim_command(command)
-        end)
+        end, { desc = 'git [P]ush current branch' })
+        vim.keymap.set('n', '<leader>hO', function()
+          local branch_name = vim.api.nvim_exec('Git rev-parse --abbrev-ref HEAD', true)
+          local command = 'Git pull origin ' .. branch_name
+          vim.api.nvim_command(command)
+        end, { desc = 'git pull [O]rigin current branch' })
       end,
     },
   },
