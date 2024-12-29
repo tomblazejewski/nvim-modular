@@ -82,7 +82,8 @@ return {
         map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
         vim.keymap.set('n', '<leader>hc', ':Git commit -am ', { desc = 'git add [c]ommit' })
         vim.keymap.set('n', '<leader>hC', ':Git add . <bar> :Git commit -am ', { desc = 'git Add all [C]ommit' })
-        vim.keymap.set('n', '<leader>hB', ':Git checkout -b ', { desc = 'git Add all [C]ommit' })
+        vim.keymap.set('n', '<leader>hB', ':Git checkout -b ', { desc = 'git create new [B]ranch' })
+        vim.keymap.set('n', '<leader>hA', vim.api.nvim_exec('Git commit --amend', true), { desc = 'git commit [A]mend' })
         vim.keymap.set('n', '<leader>hP', function()
           local branch_name = vim.api.nvim_exec('Git rev-parse --abbrev-ref HEAD', true)
           local command = 'Git push origin ' .. branch_name
