@@ -16,6 +16,7 @@ local opts = {
     null_ls.builtins.formatting.isort,
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.prettier,
+    null_ls.builtins.diagnostics.mypy,
     -- flake8.with {
     --   '--max-line-length=120',
     --   '--max-complexity=18',
